@@ -6,6 +6,14 @@ The user can click on a link to a simple search page with a single input box. Ty
 
 The code was initially derived from the code for the "contacts" tutorial from the Udacity course, so there are likely similarities. Input from other students on the Slack forum were also helpful.
 
+# Installation
+To run this program, npm must be installed. After downloading this folder, type the following from within the folder on the command line:
+
+npm install
+npm start
+
+The program should then be running on your browser.
+
 # Original README
 This is the starter template for the final assessment project for Udacity's React Fundamentals course, developed by [React Training](https://reacttraining.com). The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
 
