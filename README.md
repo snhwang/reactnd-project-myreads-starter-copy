@@ -1,3 +1,12 @@
+8/13/2017
+
+This is my version of the first project for Udacity's React nanodegree course. The original README is at the bottom, describing the original template from which this code was derived. The original template just include a static example of the CSS and HTML markup. The current implementation display books (cover pic, title, and author) on 3 "shelves": "Currently Reading," "Want to Read," and "Finished Reading." 
+
+The user can click on a link to a simple search page with a single input box. Typing a search term searches the book database and immediately displays a list. The list is divided into 4 groups: "Search Books: not on Shelves," "SearchedBooks: Want To Read," "Searched Books: Currently Reading," and "Searched Books: Already Read." Clicking on the "Close" link returns the user back to the first main page.
+
+The code was initially derived from the code for the "contacts" tutorial from the Udacity course, so there are likely similarities. Input from other students on the Slack forum were also helpful.
+
+# Original README
 This is the starter template for the final assessment project for Udacity's React Fundamentals course, developed by [React Training](https://reacttraining.com). The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
 
 Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
