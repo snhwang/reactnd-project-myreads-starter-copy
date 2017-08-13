@@ -7,7 +7,9 @@ The user can click on a link to a simple search page with a single input box. Ty
 The code was initially derived from the code for the "contacts" tutorial from the Udacity course, so there are likely similarities. Input from other students on the Slack forum were also helpful.
 
 # Installation
-To run this program, npm must be installed. After downloading this folder, enter the following 2 commands from within the folder on the command line:
+To run this program, first install Node.js, which also installs npm (https://nodejs.org/en/download/). '
+
+After downloading reactnd-project-myreads-starter-copy folder, enter the following 2 commands from within the folder on the command line:
 
 npm install
 npm start
