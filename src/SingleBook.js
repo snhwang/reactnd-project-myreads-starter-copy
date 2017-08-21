@@ -15,8 +15,8 @@ class SingleBook extends Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange(book, event) {
-    this.props.onMoveBook(book, event.target.value)
+  handleChange(event) {
+    this.props.onMoveBook(this.state.book, event.target.value)
   }
 
   render() {
@@ -25,7 +25,10 @@ class SingleBook extends Component {
     // From the Slack forum to check to see if the cover thumbnail is defined
     let coverURL = (book.imageLinks && book.imageLinks.thumbnail) ?
       book.imageLinks.thumbnail : 'https://books.google.com/googlebooks/images/no_cover_thumb.gif'
-    
+  
+    // The inisital value of the drop down menu is set to this.props.shelf instead of book.shelf
+    // because the books that were found on searching were often already assigned a shelf even
+    // though they had not been yet placed on a shelf
     return (
       <ol className="book">
         <div className="book-with-shelf-mover">
@@ -34,7 +37,7 @@ class SingleBook extends Component {
               backgroundImage: `url(${coverURL})`
           }}/>
           <div className="book-shelf-mover">
-            <select value={"none"} onChange={this.handleChange.bind(this, book)}>
+            <select value={this.props.shelf} onChange={this.handleChange}>
               <option value="none" disabled>Move to...</option>
               <option value="currentlyReading">Currently Reading</option>
               <option value="wantToRead">Want to Read</option>
