@@ -12,10 +12,9 @@ class SingleBook extends Component {
     this.state = {
       book: this.props.book
     }
-    this.handleChange = this.handleChange.bind(this)
   }
-
-  handleChange(event) {
+// Changed to a fat arrow function and removed the explicit bind as suggested by the Udacity reviewer.
+  handleChange = (event) => {
     this.props.onMoveBook(this.state.book, event.target.value)
   }
 
@@ -26,7 +25,7 @@ class SingleBook extends Component {
     let coverURL = (book.imageLinks && book.imageLinks.thumbnail) ?
       book.imageLinks.thumbnail : 'https://books.google.com/googlebooks/images/no_cover_thumb.gif'
   
-    // The inisital value of the drop down menu is set to this.props.shelf instead of book.shelf
+    // The initial value of the drop down menu is set to this.props.shelf instead of book.shelf
     // because the books that were found on searching were often already assigned a shelf even
     // though they had not been yet placed on a shelf
     return (

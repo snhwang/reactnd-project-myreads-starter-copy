@@ -122,7 +122,6 @@ class BookApp extends Component {
 // The list of books is rendered as the user types a term into the search box.
 // Books are divided into 4 groups: not on shelf and one group for each of the searched books already on a shelf
           <div className="search-display">
-            <h2>{this.state.query}</h2>
             <BookSearch onSearch={this.searchBooks} query={this.state.query}/>
             <h2>Searched Books: not on Shelves</h2>
             <BookListNoShelf books={searchedNotOnShelves} onMove={this.moveBook}/>

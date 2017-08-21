@@ -1,11 +1,11 @@
-// To render a search box to allow the use to type a search term to find books.
+// For rendinering a search box to allow the use to type a search term to find books.
 
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const BookSearch = ({ onSearch, query }) =>
+ const BookSearch = ({ onSearch, query }) =>
   <div>
-    <h2>Search Component</h2>
+    <h2>Please start typing a term to search the book database:</h2>
     <form className="book-search-form">
       <div className="search-details">
         <input
@@ -20,3 +20,5 @@ export const BookSearch = ({ onSearch, query }) =>
       </div>
     </form>
   </div>
+
+export default BookSearch
