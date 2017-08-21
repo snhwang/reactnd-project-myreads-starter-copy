@@ -1,4 +1,5 @@
 8/20/2017
+
 2nd submisstion
 
 This is my 2nd version of the first project for Udacity's React nanodegree course. I attempted to implement the suggestions from the Udacity reviewer.
