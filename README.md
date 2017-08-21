@@ -1,6 +1,9 @@
-8/13/2017
+8/20/2017
+2nd submisstion
 
-This is my version of the first project for Udacity's React nanodegree course. The original README is at the bottom, describing the original template from which this code was derived. The original template just include a static example of the CSS and HTML markup. The current implementation display books (cover pic, title, and author) on 3 "shelves": "Currently Reading," "Want to Read," and "Finished Reading." A drop down menu with each book enables the user to assign the book to a shelf or to remove it from the list.
+This is my 2nd version of the first project for Udacity's React nanodegree course. I attempted to implement the suggestions from the Udacity reviewer.
+
+The original README is at the bottom, describing the original template from which this code was derived. The original template just include a static example of the CSS and HTML markup. The current implementation display books (cover pic, title, and author) on 3 "shelves": "Currently Reading," "Want to Read," and "Finished Reading." A drop down menu with each book enables the user to assign the book to a shelf or to remove it from the list.
 
 The user can click on a link to a simple search page with a single input box. Typing a search term searches the book database and immediately displays a list. The list is divided into 4 groups: "Search Books: not on Shelves," "SearchedBooks: Want To Read," "Searched Books: Currently Reading," and "Searched Books: Already Read." Clicking on the "Close" link returns the user back to the first main page. The same drop down menu is shown with each book. The user can assign the searched books into a shelf and and lists are automatically updated. The actual search terms are limited and can be found in the file SEARCH_TERMS.md. This was provided by the starter template.
 
@@ -15,9 +18,6 @@ npm install
 npm start
 
 The program should then be running on your browser.
-
-# Bugs
-Occassionally, the list is not immediately updated when a book is assigned to a shelf. If the selection is repeated or the page is refeshed, the list can be seen to have been updated.
 
 # Original README
 This is the starter template for the final assessment project for Udacity's React Fundamentals course, developed by [React Training](https://reacttraining.com). The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
