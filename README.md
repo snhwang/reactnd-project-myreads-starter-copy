@@ -21,6 +21,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 After downloading reactnd-project-myreads-starter-copy folder, enter the following 2 commands from within the folder on the command line:
 
 npm install
+
 npm start
 
 The program should then be running on your browser.
