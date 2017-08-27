@@ -4,7 +4,7 @@ Scott Hwang
 
 snhwang@alum.mit.edu
 
-This is mys submission for the first project for Udacity's React nanodegree course. 
+This is my submission for the first project for Udacity's React nanodegree course. 
 
 The code was derived by building upon a template provided by Udacity. The original template just include a static example of the CSS and HTML markup. 
 
