@@ -32,7 +32,6 @@ class SingleBook extends Component {
       <ol className="book">
         <div className="book-with-shelf-mover">
           <div className='book-cover' style={{
-              width: 128, height: 192, 
               backgroundImage: `url(${coverURL})`
           }}/>
           <div className="book-shelf-mover">
@@ -45,8 +44,8 @@ class SingleBook extends Component {
             </select>
           </div>
         </div>
-        <p className="book-title">{book.title}</p>
-        <p className="book-authors">{book.authors}</p>
+        <p className="book-title">{book.title ? book.title: ''}</p>
+        <p className="book-authors">{book.authors ? book.authors.join(', '): ''}</p>
       </ol>
     )
   }

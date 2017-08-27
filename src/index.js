@@ -1,4 +1,4 @@
-/* Modifed as shown in the Udacity turial fro the contacts app */
+/* Modifed as shown in the Udacity tutorial for the contacts app */
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'

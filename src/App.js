@@ -4,6 +4,11 @@ import { Route } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
 import SingleBook from './SingleBook'
 import BookSearch from './BookSearch'
+import BookList from './BookList'
+import BookListNoShelf from './BookListNoShelf'
+import BookListIntersection from './BookListIntersection'
+import MainPage from './MainPage'
+import SearchPage from './SearchPage'
 import './App.css'
 
 class BookApp extends Component {
@@ -47,95 +52,31 @@ class BookApp extends Component {
     const finishedReading = this.state.books.filter((book) => book.shelf === 'read')
     const searchedNotOnShelves = this.state.searchedBooks.filter(b =>
       this.state.books.filter(book => b.id === book.id).length < 1)
-// I initial defined these other sub lists of the searched books but decided to define
-// a more generalized method to render the intersection of 2 lists implemented as BookListIntersection
-/* 
-    const searchedWantToRead = this.state.searchedBooks.filter(b =>
-      wantToRead.filter(book => b.id === book.id).length > 0)
-    const searchedCurrentlyReading = this.state.searchedBooks.filter(b =>
-      currentlyReading.filter(book => b.id === book.id).length > 0)
-    const searchedFinishedReading = this.state.searchedBooks.filter(b =>
-      finishedReading.filter(book => b.id === book.id).length > 0)
-    const intersectionList = ({ bookList1, bookList2 }) =>
-      bookList1.filter(b =>
-        bookList2.filter(book => b.id === book.id).length > 0)
-*/
-
-// Defined const BookList as suggested by the Udacity reviewer
-    const BookList = ({ books, onMove }) => 
-      <div className="books-grid">
-        {books.map(book => 
-          <SingleBook
-            onMoveBook={onMove} 
-            book={book}
-            shelf={book.shelf}
-          />
-        )}
-      </div>
-
-// Resorted to this since books which were found on searching were sometimes already assigned a shelf even though
-// they had not been placed on a shelf
-    const BookListNoShelf = ({ books, onMove }) => 
-      <div className="books-grid">
-        {books.map(book => 
-          <SingleBook
-            onMoveBook={onMove} 
-            book={book}
-            shelf={"none"}
-          />
-        )}
-      </div>
-
-// Renders the list of books that result from the intersection of 2 other lists
-  const BookListIntersection = ({ bookList1, bookList2, onMove }) => 
-      <div className="books-grid">
-        {bookList1.filter(b => bookList2.filter(book => b.id === book.id).length > 0).map(book => 
-          <SingleBook
-            onMoveBook={onMove} 
-            book={book}
-            shelf={book.shelf}
-          />
-        )}
-      </div>
 
     return (
       <div className="BookApp">
         <Route exact path="/" render={() => (
 // Main page. Shows the 3 shelves.
-          <div className="bookshelves">
-            <div className="list-books">
-              <h2>Currently Reading</h2>
-              <BookList books={currentlyReading} onMove={this.moveBook}/>
-              <h2>Want to Read</h2>
-              <BookList books={wantToRead} onMove={this.moveBook}/>
-              <h2>Finished Reading</h2>
-              <BookList books={finishedReading} onMove={this.moveBook}/>
+            <div>
+              <MainPage books={this.state.books} onMove={this.moveBook}/>
+              <Link to='/search' className='book-search'>
+                Search and Add Books
+              </Link>
             </div>
-            <Link
-              to='/search'
-              className='book-search'
-            >Search and Add Books</Link>
-          </div>
-        )}/>
+          )}/>
         <Route path="/search" render={({ history }) => (
 // The search page.
 // The list of books is rendered as the user types a term into the search box.
 // Books are divided into 4 groups: not on shelf and one group for each of the searched books already on a shelf
-          <div className="search-display">
-            <BookSearch onSearch={this.searchBooks} query={this.state.query}/>
-            <h2>Searched Books: not on Shelves</h2>
-            <BookListNoShelf books={searchedNotOnShelves} onMove={this.moveBook}/>
-            <h2>Searched Books: Currently Reading</h2>
-            <BookListIntersection
-              bookList1={this.state.searchedBooks} bookList2={currentlyReading} onMove={this.moveBook}/>
-            <h2>Searched Books: Want to Read</h2>
-            <BookListIntersection
-              bookList1={this.state.searchedBooks} bookList2={wantToRead} onMove={this.moveBook}/>
-             <h2>Searched Books: Finished Reading</h2>
-            <BookListIntersection
-              bookList1={this.state.searchedBooks} bookList2={finishedReading} onMove={this.moveBook}/>
-           </div>
-        )}/>
+            <div>
+              <BookSearch onSearch={this.searchBooks} query={this.state.query}/>
+              <SearchPage
+                books={this.state.books}
+                searchedBooks={this.state.searchedBooks}
+                onMove={this.moveBook}
+              />
+            </div>
+          )}/>
       </div>
     )
   }
