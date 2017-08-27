@@ -1,4 +1,4 @@
-//For rendinering a single book with a dropdown menu to place the book in a shelf
+//For rendinering a single book with a dropdown menu to place the book on a shelf
 
 import React, { Component } from 'react'
 import PropTypes from 'prop-types' 

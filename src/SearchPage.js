@@ -2,7 +2,6 @@
 // 1) Search books not already on a shelf, 2) Searched books currently being read, 3) Searched books wanted to
 // be read, and 3) Searched books which are already read
 import React from 'react'
-import BookSearch from './BookSearch'
 import BookListNoShelf from './BookListNoShelf'
 import BookListIntersection from './BookListIntersection'
 

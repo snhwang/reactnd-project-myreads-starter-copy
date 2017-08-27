@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
   <div>
     <h2>Please start typing a term to search the book database:</h2>
     <form className="book-search-form">
-      <div className="search-details">
+      <div className="search-books-bar">
         <input
           value={query}
           autoFocus
@@ -16,7 +16,8 @@ import { Link } from 'react-router-dom'
           placeholder="Seach terms"
           onChange={(event) => onSearch(event.target.value)}
         />
-        <Link className="close-book-search" to="/">Close</Link>
+        <Link className="close-search" to="/">
+        </Link>
       </div>
     </form>
   </div>

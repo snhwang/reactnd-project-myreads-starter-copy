@@ -6,19 +6,22 @@ import SingleBook from './SingleBook'
 // assigned a shelf even though they had not been placed on a shelf
 const BookListNoShelf = ({ books, searchedBooks, onMove }) => 
     <div>
-        <h2>Searched Books: not on Shelves</h2>
-        <div className="books-grid">
-            {searchedBooks.filter(b =>
-                books.filter(book => b.id === book.id).length < 1).map(book => 
-                    <SingleBook
-                        key={book.id}
-                        onMoveBook={onMove} 
-                        book={book}
-                        shelf={"none"}
-                    />    
-                )
-            }
-        </div>
+        {searchedBooks ?
+            <div>
+                <h2 className="bookshelf-title"> Searched Books: not on Shelves </h2>
+                <div className="books-grid">
+                    {searchedBooks.filter(b => books.filter(book => b.id === book.id).length < 1).map(book => 
+                        <SingleBook
+                            key={book.id}
+                            onMoveBook={onMove} 
+                            book={book}
+                            shelf={"none"}
+                        />    
+                    )}
+                </div>
+            </div>
+            : ''
+        }
     </div>
 
 export default BookListNoShelf
